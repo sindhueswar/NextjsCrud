@@ -26,7 +26,7 @@ export default function UpdateUserForm({ formId, formData, setFormData }) {
   if (UpdateMutation.isSuccess)
     return <Success message={"Updated Successfully"}></Success>;
 
-  const { name, avatar, salary, date, email, status } = data;
+  const { name, salary, date, email, status } = data;
   const [firstname, lastname] = name ? name.split(" ") : formData;
 
   const handleSubmit = async (e) => {

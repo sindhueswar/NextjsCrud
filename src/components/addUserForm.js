@@ -4,7 +4,7 @@ import Success from "./success";
 import Bug from "./bug";
 import { useQueryClient, useMutation } from "react-query";
 import { addUser, getUsers } from "../lib/helper";
-// import avatar from "./../assests/avatar.svg"
+
 export default function AddUserForm({ formData, setFormData }) {
   const queryClient = useQueryClient();
   const addMutation = useMutation(addUser, {
@@ -21,8 +21,7 @@ export default function AddUserForm({ formData, setFormData }) {
 
     const model = {
       name: `${firstname} ${lastname}`,
-      avatar,
-      email,
+           email,
       salary,
       // date,
       status: status ?? "Active",

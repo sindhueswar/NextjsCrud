@@ -10,7 +10,6 @@ import {
   updateAction,
   deleteAction,
 } from "../redux/reducer";
-// import avatar from "./../assests/avatar.svg"
 const Table = () => {
   const { isLoading, isError, data, error } = useQuery("users", getUsers);
    console.log("----------------------------------------->",{error})
@@ -50,7 +49,7 @@ const Table = () => {
   );
 };
 
-function Tr({ _id, name, avatar, email, salary, date, status }) {
+function Tr({ _id, name, email, salary, date, status }) {
   const visible = useSelector((state) => state.app.client.toggleForm);
   const dispatch = useDispatch();
 
@@ -70,14 +69,7 @@ function Tr({ _id, name, avatar, email, salary, date, status }) {
   return (
     <tr className="bg-gray-200 text-center rounded-xl border-red-300 border-y-2	">
       <td className="px-2 py-2 flex flex-row items-center">
-        {/* <Image
-          src={avatar}
-          alt="avatar"
-          className="h-8 w-8 rounded-full object-cover"
-          width={10}
-          height={10}
-        /> */}
-        <span className="text-center ml-2 font-semibold">
+               <span className="text-center ml-2 font-semibold">
           {name || "Unknown"}
         </span>
       </td>
